@@ -1,0 +1,58 @@
+
+<div class="container">
+    <mat-card>
+        <mat-card-title>
+            <h1>HOUSES</h1>
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="houseForm">
+                <div class="col">
+                    <div class="row">
+                        <label>house_owner</label>
+                        <input type="text" class="form-control" formControlName="house_owner" >
+                    </div>
+                    <div class="row">
+                        <label>Location</label>
+                        <input type="text" class="form-control" formControlName="location" >
+                    </div>
+                    <div class="row">
+                        <label>House_no</label>
+                        <input type="text" class="form-control" formControlName="house_no" >
+                    </div>
+                    <div class="row">
+                        <label>categories</label>
+                        <input type="text"  class="form-control" formControlName="category" >
+                    </div>
+                   
+                </div>
+                <div class="row-mt-3">
+                    <button class="btn btn-success mt-3" (click)="submit()">submit</button>
+                </div>
+              
+               
+            
+            </form>
+        </mat-card-content>
+    </mat-card>
+    
+    </div>     
+    
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">house No:</th>
+            <th scope="col">location</th>
+            <th scope="col">house owner </th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let house of houses">
+            <td>{{house.house_no}}</td>
+            <td>{{house.location}}</td>
+            <td>{{house.house_owner}}</td>
+            <td>{{house.category}}</td>
+          </tr>
+         
+        </tbody>
+      </table>

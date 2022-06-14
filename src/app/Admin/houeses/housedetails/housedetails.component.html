@@ -1,0 +1,48 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>
+            <h2>HOUSE DETAILS</h2>
+        </mat-card-title>
+        <mat-card-content>
+                    <form [formGroup] ="housedetailsForm" >
+                        <div class="col">
+                            <div class="row-mt-3">
+                                <div class="form-group">
+                                    <label> Bed_room:</label>
+                                    <input type="text"  class="form-control" formControlName="bed_room">
+                                </div>
+                            </div>
+                            <div class="row-mt-3">
+                                <div class="form-group">
+                                    <label> sitting_room:</label>
+                                    <input type="text"  class="form-control" formControlName="setting_room">
+                                </div>
+                            </div>
+                            <div class="row-mt-3">
+                                <div class="form-group">
+                                    <label> dinning:</label>
+                                    <input type="text"  class="form-control" formControlName="dining">
+                                </div>
+                            </div>
+                            <div class="row-mt-3">
+                                <div class="form-group">
+                                    <label> toilet:</label>
+                                    <input type="text"  class="form-control" formControlName="toilet">
+                                </div>
+                            </div>
+                            <div class="row-mt-3">
+                                <select class="form-control mt-3" formControlName="house_id">
+                                    <option></option>
+                                    <option *ngFor="let house of houses" [value]="house.house_id">{{house.house_no}}</option>
+                                </select>
+                            </div>
+                            
+                            <button  class="btn btn-success mt-3" (click)="submit()">submit</button>
+                        </div>
+                        
+                    </form>
+        </mat-card-content>
+    </mat-card>
+   
+      
+</div>

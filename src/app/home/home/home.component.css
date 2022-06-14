@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+/* .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3));
+   
+    background-size: cover;
+    background-position: center; */
+   
+
+/* nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: #fff;
+}
+.register-btn{
+    background: #fff;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration:none;
+    font-size: 14px;
+    
+}
+.container{
+    padding: 0 7%;
+}
+.header h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    padding: 22%;
+}
+.search-bar{
+    background: #fff;
+    width: 70%;
+    margin: 30px auto;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50px;
+}
+.search-bar form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-bar form input{
+    display: block;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.search-bar form button{
+    background: #ff5361;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.search-bar form button img{
+    width: 30px;
+    margin-top: 7px;
+  
+}
+.location-input{
+    flex: 1;
+}
+.search-bar form label{
+   font-weight: 600; 
+}
+/*..................exclusives...........*/
+/* .sub{
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333;
+}
+.Exclusives{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+
+}
+.Exclusives picha{
+    width: 100%;
+    border-radius: 20px;
+}  */
+
+
+
+#headertop{
+     
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .categories{
+    width: 100%;
+    
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 4%;
+  }
+
+  .categories .categories-title{
+  
+    text-align: center;
+    padding-bottom: 2%;
+    
+  }
+  
+  .categories-title h2{
+    font-size: 2em;
+    font-family: 'Satisfy', cursive;
+    font-weight:bold;
+  }
+
+  .categories .categories-items .item{
+    background: white;
+    border-radius: 18px;
+    margin: 9px;
+    -webkit-box-shadow: -1px 5px 15px -6px #292525; 
+box-shadow: -1px 5px 15px -6px #000000;
+  }
+  
+  .item .item-img img{
+    width: 100%;
+    height: 250px;
+    border-radius: 18px;
+  }
+
+  .item .item-desc{
+  text-align: center;
+    margin-left: 15px;
+  }
+  
+  .item-desc h3{
+    font-size: 110%;
+    font-weight: bold;
+    
+  }
+  /* ====ABOUT US===== */
+  .about-us{
+    background: white;
+    padding-bottom: 4%;
+    padding-top: 5%;
+  }
+  .about-us .container{
+    
+    margin: auto;
+  }
+  
+  .about-us .about-us-title{
+    text-align: center;
+  }
+  
+  .about-us-title h2{
+      font-size: 2em;
+      font-family: 'Satisfy', cursive;
+      font-weight:bold;
+     
+  }
+  .about-us .about-us-details {
+  
+    width: 90%;
+    margin: auto;
+  } 
+  
+  .about-us-details p{
+    text-align: center;
+  }
+/* =====SERVICES====== */
+  .service{
+    background: pink;
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  .service .container{
+    margin: auto;
+  }
+
+  .service .service-title{
+    text-align: center;
+  }
+
+  .service-title h2{
+    font-size: 2em;
+    font-family: 'Satisfy', cursive;
+    font-weight:bold;
+  }
+
+  
+  
