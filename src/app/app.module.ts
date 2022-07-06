@@ -20,6 +20,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HousedetailsComponent } from './Admin/houeses/housedetails/housedetails.component';
 import { RegisterComponent } from './Customer/registers/register/register.component';
 import { RentComponent } from './Renting/renters/rent/rent.component';
+import { NavbarComponent } from './Admin/bars/navbar/navbar.component';
+import { UserComponent } from './Admin/users/user/user.component';
+import { LoginComponent } from './Login/logers/login/login.component';
+import { FormComponent } from './home/renter/form/form.component';
+import { CustComponent } from './Admin/custs/cust/cust.component';
+import { RentsComponent } from './Renting/renters/rents/rents.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { RentComponent } from './Renting/renters/rent/rent.component';
     HouseComponent,
     HousedetailsComponent,
     RegisterComponent,
-    RentComponent
+    RentComponent,
+    NavbarComponent,
+    UserComponent,
+    LoginComponent,
+    FormComponent,
+    CustComponent,
+    RentsComponent
   ],
   imports: [
     BrowserModule,

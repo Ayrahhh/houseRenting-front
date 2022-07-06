@@ -1,0 +1,39 @@
+<ng-template #adduser>
+    <div class="container">
+        <!-- <mat-card>
+            <mat-card-title>
+                USER
+            </mat-card-title>
+            <mat-card-content> -->
+                <form [formGroup]="userForm">
+                    <div class="col">
+                        <div class="row ">
+                            <label>Username:</label>
+                            <input type="text" formControlName="username" class="form-control">
+                        </div>
+                        <div class="row ">
+                            <label>password:</label>
+                            <input type="text" formControlName="password" class="form-control">
+                        </div>
+
+                        <div class="row ">
+                            <label>email:</label>
+                            <input type="text" formControlName="email" class="form-control">
+                        </div>
+                        <button class="btn btn-success">submit</button>
+                    </div>
+                </form>
+                <!-- <mat-card-content>
+        </mat-card> -->
+    </div>
+</ng-template>
+
+<!-- <mat-card>
+    <mat-card-title>
+        Users
+    </mat-card-title>
+    <mat-card-content> -->
+        <button mat-raised-button class="button" (click)="open()">Add User</button>
+
+    <!-- </mat-card-content>
+</mat-card> -->

@@ -1,0 +1,38 @@
+
+ <mat-card>
+    <mat-card-title>
+        Customer's Table
+    </mat-card-title>
+    <mat-card-content>
+     
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phonenumber</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of custs">
+                    <td>{{customer.firstname}}</td>
+                    <td>{{customer.lastname}}</td>
+                    <td>{{customer.country}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.password}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.phone_no}}</td>
+                    <td><button class="btn btn-danger">delete</button>&nbsp;<button class="btn btn-success"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card-content>
+</mat-card>
+
+      
+ 
+

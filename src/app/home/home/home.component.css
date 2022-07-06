@@ -191,8 +191,8 @@ box-shadow: -1px 5px 15px -6px #000000;
 /* =====SERVICES====== */
   .service{
     background: pink;
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 3%;
+    padding-top: 3%;
   }
   .service .container{
     margin: auto;
@@ -207,6 +207,8 @@ box-shadow: -1px 5px 15px -6px #000000;
     font-family: 'Satisfy', cursive;
     font-weight:bold;
   }
-
+.p{
+  font-size: large;
+}
   
   

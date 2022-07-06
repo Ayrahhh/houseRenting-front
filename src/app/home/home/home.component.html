@@ -14,80 +14,30 @@
   </div>
   <div class="row categories-items">
     <!-- =======collumn 1=========== -->
-    <div class="col-md-3">
+    <div class="col-md-3" *ngFor="let house of houses">
       <div class="item">
         <!-- ========image div===== -->
         <div class="item-img">
-          <img src="assets/images/s3.jpg">
+          <img [src]="'data:image/jpeg;base64,'+house.image" >
         </div>
         <!-- ========end image div===== -->
 
         <div class="item-desc">
-          <h3>price:Tzs 55000</h3>
-          
+          price:Tzs {{house.price_per_month}}<br>
+          Category: {{house.category}}<br>
+          Status:taken<br>
+          <button class="btn btn-success" (click)="houseDetail(house)">More Details</button>&nbsp;
+        <!--if rented is true itkw disabled and viseversa-->
+          <button [disabled]="house.rented" class="btn btn-success" (click)="[try(house),navigate()]">rent now</button>
         </div>
-
-      </div>
-    </div>
-    <!-- =======end collumn 1=========== -->
-
-
-    <!-- =======collumn 1=========== -->
-    <div class="col-md-3">
-      <div class="item">
-        <!-- ========image div===== -->
-        <div class="item-img">
-          <img src="assets/images/f3.jpg">
-        </div>
-        <!-- ========end image div===== -->
-
-        <div class="item-desc">
-          <h3>price:Tzs 65000</h3>
-         
-        </div>
-
-      </div>
-    </div>
-    <!-- =======end collumn 1=========== -->
-
-
-    <!-- =======collumn 1=========== -->
-    <div class="col-md-3">
-      <div class="item">
-        <!-- ========image div===== -->
-        <div class="item-img">
-          <img src="assets/images/d4.jpg">
-        </div>
-        <!-- ========end image div===== -->
-
-        <div class="item-desc">
-          <h3>price:Tzs 90000</h3>
-         
-        </div>
-
-      </div>
-    </div>
-    <!-- =======end collumn 1=========== -->
-
-
-    <!-- =======collumn 1=========== -->
-    <div class="col-md-3">
-      <div class="item">
-        <!-- ========image div===== -->
-        <div class="item-img">
-          <img src="assets/images/f1.jpg">
-        </div>
-        <!-- ========end image div===== -->
-
-        <div class="item-desc">
         
-          <h3>Price:Tzs 120000</h3>
-          
-        </div>
 
       </div>
     </div>
     <!-- =======end collumn 1=========== -->
+
+
+    
 
   </div>
 
@@ -95,7 +45,30 @@
 
 
 <!-- ==========end categories========= -->
+<ng-template #houseDetails>
+  <div class="col">
+    <div class="row">
+        <h3>house_owner:  {{house.house_owner}}</h3>
+    </div>
+    <div class="row">
+      <h3>Location: {{house.location}}</h3>
+    </div>
+    <div class="row">
+      <h3>house number: {{house.house_no}}</h3>
+       
+    </div>
+    <div class="row">
+       <h3> categories: {{house. category}}</h3>
+        
+    </div>
+    <div class="row">
+        <h3> price per month: {{house.price_per_month}}</h3>
+        
+    </div>
+   
+</div>
 
+</ng-template>
 
 
 
@@ -110,13 +83,11 @@
   <div class="row about-us-details">
     <div class="col-md-12">
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo hic 
-        aperiam, quis modi vero, aliquid at officia quae perspiciatis magni 
-        tenetur nesciunt dolores ea voluptate, delectus ducimus tempora eius! Atque!
-      
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo hic 
-        aperiam, quis modi vero, aliquid at officia quae perspiciatis magni 
-        tenetur nesciunt dolores ea voluptate, delectus ducimus tempora eius! Atque!</p>
+      <p>The House Renting Web Application System helps to register individuals and serve a house for you!</p>
+        <p>We ensure your safety and acquire all the recommendation that you need </p>   
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo hic 
+          aperiam, quis modi vero, aliquid at officia quae perspiciatis magni 
+          tenetur nesciunt dolores ea voluptate, delectus ducimus tempora eius! Atque!</p>
   
     </div>
     

@@ -1,37 +1,78 @@
-<div class="container">
-    <mat-card>
-    <mat-card-title>
-    <h2>RENTERS DETAILS</h2>
-</mat-card-title>
-<mat-card-content>
-<form>
-    <div class="col">
-        <div class="row">
-            <label>Start-Date</label>
-            <div class="form-group">
-                <input type="text" name="start-date" class="form-control">
+
+    
+    <div *ngIf="norent" class="manage">
+        <mat-card>
+        <mat-card-title>
+        <h2>RENTERS DETAILS</h2>
+    </mat-card-title>
+    <mat-card-content>
+    <form [formGroup]="rentForm">
+        <div class="col">
+            <div class="row">
+                <label>Start-Date</label>
+                <div class="form-group">
+                    <input type="date"  formControlName="start_date" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <label>End-Date</label>
-            <div class="form-group">
-                <input type="text" name="end-date" class="form-control">
+            <div class="row">
+                <label>End-Date</label>
+                <div class="form-group">
+                    <input type="date" formControlName="end_date" class="form-control">
+                </div> 
             </div>
+           
+            <button class="btn btn-success mt-3" (click)="submit()" >submit</button>
         </div>
-        <div class="row">
-            <label>Custome_ID</label>
-            <div class="form-group">
-                <input type="text" name="customer_id" class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <label>HOUSE_ID</label>
-            <div class="form-group">
-                <input type="text" name="house_id" class="form-control">
-            </div>
-        </div>
+    </form>
+    </mat-card-content>
+    </mat-card>
     </div>
-</form>
-</mat-card-content>
-</mat-card>
+
+    
+<div class="manage">
+    <mat-card  *ngIf="rent">
+        <mat-card-title>
+          <h1> WELCOME: {{rent.firstname}} these are your rent details</h1>
+        </mat-card-title>
+        <mat-card-content>
+         
+                <h2>RENTER DETAILS</h2>
+               <table style="width: 45%;">
+                <tr>
+                    <th>FIRST NAME:</th><td>{{rent.firstname}}</td>
+                </tr>
+                <tr>
+                    <th>LAST NAME:</th><td>{{rent.lastname}}</td>
+                </tr>
+                <tr>
+                    <th>START DATE:</th><td>{{rent.start_date}}</td>
+                </tr>
+                <tr>
+                    <th>END DATE:</th><td>{{rent.end_date}}</td>
+                </tr>
+                <h2>HOUSE DETAILS</h2>
+                <tr>
+                    <th>HOUSE IMAGE:</th><td><img [src]="'data:image/jpeg;base64,'+rent.image" alt=""></td>
+                </tr>
+                <tr>
+                    <th>HOUSE LOCATION:</th><td>{{rent.location}}</td>
+                </tr>
+                <tr>
+                    <th>HOUSE OWNER:</th><td>{{rent.house_owner}}</td>
+                </tr>
+                <tr>
+                    <th>HOUSE NUMBER:</th><td>{{rent.house_no}}</td>
+                </tr>
+                <tr>
+                    <th>HOUSE CATEGORY:</th><td>{{rent.category}}</td>
+                </tr>
+                <tr>
+                    <th>PRICE PER MONTH:</th><td>{{rent.price_per_month}}</td>
+                </tr>
+               
+               </table>
+        </mat-card-content>
+    </mat-card>
 </div>
+
+

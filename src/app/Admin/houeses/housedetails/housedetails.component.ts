@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ComponentType } from '@angular/cdk/portal';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { HouseService } from 'src/app/services/house.service';
 import { HousedetailsService } from 'src/app/services/housedetails.service';
 
@@ -9,13 +11,15 @@ import { HousedetailsService } from 'src/app/services/housedetails.service';
   styleUrls: ['./housedetails.component.css']
 })
 export class HousedetailsComponent implements OnInit {
+  //vitoto vua component
+  @ViewChild('addhousedetails') adddetails!:TemplateRef<any>
   housedetailsForm!:FormGroup
   houses!:any[]
-  constructor(private housedetailsservice:HousedetailsService,private houseservice:HouseService) { }
+  constructor(private housedetailsservice:HousedetailsService,private dialog:MatDialog) { }
  
 
   ngOnInit(): void {
-    this.getHouse()
+    // this.getHouse()
     this.housedetailsFormConfig()
   }
   housedetailsFormConfig(){
@@ -27,16 +31,27 @@ export class HousedetailsComponent implements OnInit {
       house_id:new FormControl(null,Validators.required)
     })
   }
-  submit(){
-    console.log(this.housedetailsForm.value)
-    this.housedetailsservice.post(this.housedetailsForm.value).subscribe((respond:any) =>{
-      console.log(respond)
-    })
+ submit(){
+   const  formData = new FormData()
+   formData.append(' bed_room',this.housedetailsForm.value. bed_room)
+   formData.append(' setting_room',this.housedetailsForm.value. setting_room)
+   formData.append(' dining',this.housedetailsForm.value. dining)
+   formData.append(' toilet',this.housedetailsForm.value. toilet)
+   formData.append(' house_id',this.housedetailsForm.value. house_id)
+   console.log(formData)
+   this.housedetailsservice.post(formData).subscribe((respond:any) =>{
+     console.log(respond)
+   })
+ }
+ open(){
+  const config={
+    width:'50%'
   }
-  getHouse(){
-    this.houseservice.get().subscribe((respo:any) =>{
-      this.houses = respo
-    })
-  }
+  this.dialog.open(this.adddetails,config)
 }
+}
+
+ 
+
+
 

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 
 @Component({
@@ -8,12 +10,16 @@ import { RegistrationService } from 'src/app/services/registration.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  @ViewChild('addcustomer') addcustomer!:TemplateRef<any>
   registerForm!:FormGroup
-  constructor(private registrationservice:RegistrationService ) { }
+  registration: any;
+  constructor(private registrationservice:RegistrationService,private dialog:MatDialog,private router:Router ) { }
 
   ngOnInit(): void {
     this.registerFormConfig()
+    // this.getregistration()
   } 
+ 
 
   registerFormConfig(){
     this.registerForm = new FormGroup({
@@ -22,19 +28,37 @@ export class RegisterComponent implements OnInit {
       country:new FormControl(null,[Validators.required]),
       address:new FormControl(null,[Validators.required]),
       email:new FormControl(null,[Validators.required]),
+      password:new FormControl(null,[Validators.required]),
       phone_no:new FormControl(null,[Validators.required])
     })
     
   }
   submit(){
-    console.log(this.registerForm.value)
+   
     this.registrationservice.post(this.registerForm.value).subscribe((res:any) =>{
       console.log(res)
+      this.registerForm.reset()
+      this.router.navigateByUrl("login")
     })
+  }
+// getregistration(){
+//   this.registrationservice.get.subsribe((res:any)=>{
+//     this.registration = res;
+  
+//   })
+
+
+
+  
+
+  open(){
+    const config={
+      width:'50%'
+    }
+    this.dialog.open(this.addcustomer,config)
   }
 }
 
 
 
 
-// }

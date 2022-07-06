@@ -1,0 +1,47 @@
+<section class="vh-30 gradient-custom">
+  <div class="container py-5 ">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-white" style="border-radius: 1rem;" style="background-color: rgb(134, 113, 133);">
+          <div class="card-body p-4 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+              <form [formGroup]="loginForm">
+                <div class="form-outline form-white mb-4">
+                  <input type="email" id="typeEmailX" class="form-control form-control-lg" formControlName="email" />
+                  <label class="form-label" for="typeEmailX">Email</label>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName="pass" />
+                  <label class="form-label" for="typePasswordX">Password</label>
+                </div>
+              </form>
+
+              
+
+              <button class="btn btn-outline-light btn-lg px-5" (click)="login()">Login</button>
+
+              <div class="d-flex justify-content-center text-center  pt-1">
+                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+              </div>
+
+            </div>
+
+            <div>
+              <p >Don't have an account? <a routerLink="/registration" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
